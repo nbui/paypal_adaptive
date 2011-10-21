@@ -48,7 +48,7 @@ module PaypalAdaptive
         @api_base_url = API_BASE_URL_MAPPING[pp_env]
         @headers = {
           "X-PAYPAL-SECURITY-USERID" => config['username'],
-          "X-PAYPAL-SECURITY-PASSWORD" => config['password'],
+          "X-PAYPAL-SECURITY-PASSWORD" => config['password'].to_s,
           "X-PAYPAL-SECURITY-SIGNATURE" => config['signature'],
           "X-PAYPAL-APPLICATION-ID" => config['application_id'],
           "X-PAYPAL-REQUEST-DATA-FORMAT" => "JSON",
