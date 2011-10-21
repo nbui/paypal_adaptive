@@ -29,7 +29,11 @@ module PaypalAdaptive
     end
 
     def load(environment, config_override)
-      config = YAML.load(ERB.new(File.new(@config_filepath).read).result)[environment]
+      if FileTest.exists?(@config_filepath)
+        config = YAML.load(ERB.new(File.new(@config_filepath).read).result)[environment]
+      else
+        config = {}
+      end
       config.merge!(config_override) unless config_override.nil?
       raise "Could not load settings from config file" unless config
 
