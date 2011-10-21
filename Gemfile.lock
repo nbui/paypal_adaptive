@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    paypal_adaptive (0.3)
+    paypal_adaptive (0.2.3)
       json (~> 1.6.0)
       jsonschema (~> 2.0.0)
       rake (~> 0.8)
@@ -9,7 +9,7 @@ PATH
 GEM
   remote: http://rubygems.org/
   specs:
-    json (1.6.1)
+    json (1.6.0)
     jsonschema (2.0.1)
     rake (0.9.2)
 

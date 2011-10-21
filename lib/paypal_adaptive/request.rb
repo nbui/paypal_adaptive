@@ -7,9 +7,9 @@ module PaypalAdaptive
   end
 
   class Request
-    def initialize(env = nil)
+    def initialize(env = nil, config_override = nil)
       @env = env
-      @@config ||= PaypalAdaptive::Config.new(@env)
+      @@config ||= PaypalAdaptive::Config.new(@env, config_override)
       @@api_base_url ||= @@config.api_base_url
       @@headers ||= @@config.headers
       @@ssl_cert_path ||= @@config.ssl_cert_path
